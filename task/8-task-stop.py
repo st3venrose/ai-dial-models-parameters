@@ -1,5 +1,7 @@
 from task.app.main import run
 
+# RUN: python -m task.8-task-stop
+
 # TODO:
 #  Try `stop` parameter.
 #  `stop` (str or list[str]): Tells the AI to stop generating text when it encounters specific words or phrases.
@@ -9,11 +11,13 @@ from task.app.main import run
 
 run(
     deployment_name='gpt-4o',
-    print_only_content=True,
     # TODO:
     #  1. Use `stop` parameter with value "\n\n"
+    # stop="\n\n",
     #  2. Use `stop` parameter with values ["**Embedding Layer**", "**Transformer Blocks**", "**Training**"]
+    stop=["**Embedding Layer**", "**Transformer Blocks**", "**Training**"],
     #  3. Optional: Set `print_only_content` as False to see the full JSON and what is the `finish_reason`
+    print_only_content=False,
 )
 
 # With `stop` parameter we can stop content generation. It can be used for some policies/guardrails. For instance,

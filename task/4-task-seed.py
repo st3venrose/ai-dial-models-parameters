@@ -1,5 +1,7 @@
 from task.app.main import run
 
+# RUN: python -m task.4-task-seed
+
 # TODO:
 #  Try the `seed` parameter:
 #       It allows us to reduce entropy by making the model's output more deterministic.
@@ -10,9 +12,12 @@ from task.app.main import run
 
 run(
     deployment_name='gpt-4o',
+    max_tokens=100,
     # TODO:
     #  1. Use `seed` parameter with value 42 (or whatever you want)
+    seed=500,
     #  2. Use `n` parameter with value 5
+    n=5,
 )
 
 # Check the content in choices. The expected result is that in almost all choices the result will be the same.

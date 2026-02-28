@@ -1,5 +1,7 @@
 from task.app.main import run
 
+# RUN: python -m task.2-task-n
+
 # TODO:
 #  Try the `n` parameter with different models (`deployment_name`). With the parameter `n`, we can configure how many
 #       chat completion choices to generate for each input message
@@ -13,7 +15,13 @@ from task.app.main import run
 run(
     # TODO:
     #  1. Provide `deployment_name` with model from the list above👆
+    deployment_name='gemini-2.5-pro',
+    print_request=False,
+    #print_only_content=True,
+    max_tokens=100,
     #  2. Use `n` parameter with value in range from 1 to 5!
+    #n=1,
+    n=3,
 )
 
 # Pay attention to the number of choices in the response!
