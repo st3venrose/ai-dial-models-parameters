@@ -1,5 +1,7 @@
 from task.app.main import run
 
+# RUN: python -m task.7-task-presence_penalty
+
 # TODO:
 #  Try `presence_penalty` parameter.
 #  Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's
@@ -13,6 +15,7 @@ run(
     print_only_content=True,
     # TODO:
     #  Use `presence_penalty` parameter with different range (-2.0 to 2.0)
+    presence_penalty=2.0
 )
 
 # In the final result, we can see that the higher `presence_penalty` (2.0) the more LLM is trying to add topics that
